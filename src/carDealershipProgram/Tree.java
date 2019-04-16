@@ -93,6 +93,26 @@ public class Tree {
 		inOrderHelper( node.getRightNode() );
 	}
 	
+	public int findNumberOf(Car inValue) {
+		ArrayList<Comparable> foundMatches = new ArrayList<Comparable>();
+		foundMatches = findNumberOfHelper(root, foundMatches, inValue);
+		return foundMatches.size();
+	}
+	
+	private ArrayList<Comparable> findNumberOfHelper(TreeNode node, ArrayList<Comparable> foundMatches, Car inValue) {
+		if( node != null ) {
+			Car tempCar = (Car)node.getData();
+			String manufacturer = tempCar.getName().toLowerCase();
+			String model = tempCar.getModel().toLowerCase();
+			if(inValue.getName().toLowerCase().equals(manufacturer) && inValue.getModel().toLowerCase().equals(model)) {
+				foundMatches.add(node.getData());
+			}
+			findNumberOfHelper(node.getLeftNode(), foundMatches, inValue);
+			findNumberOfHelper(node.getRightNode(), foundMatches, inValue);
+		}
+		return foundMatches;
+	}
+	
 //	Fix indentation
 	public Tree balance() {
 		ArrayList<Comparable> aux = new ArrayList<Comparable>();

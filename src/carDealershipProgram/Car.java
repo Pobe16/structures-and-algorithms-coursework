@@ -2,7 +2,7 @@ package carDealershipProgram;
 
 public class Car implements Comparable<Car>{
 	
-	protected String name;
+	public String name;
 	private String registrationNumber;
 	private String model;
 	private String colour;
@@ -36,11 +36,11 @@ public class Car implements Comparable<Car>{
 			return 0;
 		}
 		
-		if(this.name.toLowerCase().equals(otherCar.name.toLowerCase())) 
+		if(this.name.toLowerCase().equals(otherCar.name.toLowerCase()) || this.name.toLowerCase().equals("no data")) 
 		{
 			if(this.getModel().toLowerCase().equals(otherCar.getModel().toLowerCase())) 
 			{
-				if(this.getRegistration().toLowerCase().equals(otherCar.getRegistration().toLowerCase())) 
+				if(this.getRegistration().toLowerCase().equals(otherCar.getRegistration().toLowerCase()) || this.getRegistration().toLowerCase().equals("no data")) 
 				{
 					return 0;
 				}

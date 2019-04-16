@@ -137,7 +137,7 @@ public class DealershipTest {
 				String make = InputScanner.getString("Enter car make / manufacturer name");
 				String model = InputScanner.getString("Enter the model of the car");
 				Car tempCar = new Car(make, "no data", model, "no data");
-				System.out.println("Not implemented yet. ");
+				System.out.println("Number of cars of that type : " + carTree.findNumberOf(tempCar));
 				break;
 				
 			case 8:
