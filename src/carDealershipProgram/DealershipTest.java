@@ -122,8 +122,6 @@ public class DealershipTest {
 					carTree = carTree.balance();
 //					boolean carRemovalSuccess = carTree.removeNode(tempCar);
 //					System.out.println(carRemovalSuccess);
-//					TODO
-//					Change printed out message for when a car has successfully been removed
 					
 				} else {
 					System.out.println("There is no car with registration number " + registrationNumber + " in the dealership.");					
@@ -131,7 +129,6 @@ public class DealershipTest {
 				break;
 				
 			case 7:
-//				TODO
 				/*provide a method to display the 
 				 * number of cars available for a 
 				 * specific make and model of car 

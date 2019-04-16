@@ -9,7 +9,6 @@ public class Car implements Comparable<Car>{
 	
 	public Car(String manufacturerName, String regNumber, String carModel, String carColour) {
 		name = manufacturerName;
-		// TODO Auto-generated constructor stub
 		registrationNumber = regNumber;
 		model = carModel;
 		colour = carColour;
