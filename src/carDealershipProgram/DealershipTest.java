@@ -44,7 +44,7 @@ public class DealershipTest {
 					Manufacturer temp = new Manufacturer(tempString);
 					manufacturerTree.insertNode(temp);
 					tempString = null;
-//					manufacturerTree = manufacturerTree.balance();
+					manufacturerTree = manufacturerTree.balance();
 				}
 				break;
 				
@@ -57,6 +57,7 @@ public class DealershipTest {
 						: "Item not found";
 				System.out.println(tempString); 
 				tempString = null;
+				manufacturerTree = manufacturerTree.balance();
 				break;
 				
 			case 3:
@@ -103,6 +104,7 @@ public class DealershipTest {
 				
 				if (operationSuccess) {
 					System.out.println("New car added to the list.");
+					carTree = carTree.balance();
 				} else {
 					System.out.println("Some of car data were wrong. Please try again.");
 				}
@@ -117,6 +119,7 @@ public class DealershipTest {
 					tempString = (carTree.removeNode(tempCar)) ? "Car removed successfuly" : "Something went wrong";
 					System.out.println(tempString);
 					tempString = null;
+					carTree = carTree.balance();
 //					boolean carRemovalSuccess = carTree.removeNode(tempCar);
 //					System.out.println(carRemovalSuccess);
 //					TODO
@@ -167,6 +170,7 @@ public class DealershipTest {
 				manufacturerTree.insertNode(man4);
 				manufacturerTree.insertNode(man5);
 				manufacturerTree.insertNode(man6);
+				manufacturerTree = manufacturerTree.balance();
 
 
 				/*	TEST DATA 2
@@ -184,6 +188,7 @@ public class DealershipTest {
 				carTree.insertNode(testCar4);
 				carTree.insertNode(testCar5);
 				carTree.insertNode(testCar6);
+				carTree = carTree.balance();
 //				testCar = testCar2 = testCar3 = testCar4 = null;
 				System.out.println("Test Data Added Successfully");
 				break;

@@ -1,6 +1,7 @@
 package carDealershipProgram;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Tree {
@@ -115,37 +116,63 @@ public class Tree {
 	
 //	Fix indentation
 	public Tree balance() {
-		ArrayList<Comparable> aux = new ArrayList<Comparable>();
-		aux = BalanceHelper_GetListOfElements(root, aux);
-		
-		Comparable[] array = new Comparable[aux.size()]; 
-		aux.toArray(array);
-		
-		int midPoint = array.length / 2;
-		
-		Tree balanced = blancedHelper_InsertElementsIntoNewTree(array, midPoint);
-		
-		return balanced;
+		if ( root != null ) {
+			ArrayList<Comparable> aux = new ArrayList<Comparable>();
+			aux = BalanceHelper_GetListOfElements(root, aux);
+			
+			Comparable[] array = new Comparable[aux.size()]; 
+			aux.toArray(array);
+			
+			
+			
+			Tree balanced = new Tree();
+			
+			balanced = blancedHelper_InsertElementsIntoNewTree(array);
+			
+			return balanced;
+		} else {
+			return new Tree();
+		}
    
 	}
 
-	private Tree blancedHelper_InsertElementsIntoNewTree(Comparable[] array, int midPoint) {
+	private Tree blancedHelper_InsertElementsIntoNewTree(Comparable[] array) {
 		Tree balanced = new Tree();
-		balanced.insertNode(array[midPoint]);
-		
-		int leftMidPoint = midPoint / 2;
-		int rightMidPoint = midPoint * 3 / 4;
-		
-		
-	   
-		for (int i = midPoint +1; i < array.length; i++) {
-			balanced.insertNode(array[i]);
+//		
+//		balanced.insertNode(array[midPoint]);
+//		
+		int[] unordered = new int[array.length];
+		for (int i = 0; i < array.length; i++) {
+			unordered[i] = i;
 		}
-		for (int i = 0; i< midPoint; i++) {
-			balanced.insertNode(array[i]);
+		ArrayList<Integer> ordered = new ArrayList<Integer>();
+		ordered = orderHelper(unordered, ordered);
+		Integer[] orderedArray = new Integer[ordered.size()];
+		ordered.toArray(orderedArray);
+		
+		for (int i = 0; i < array.length; i++) {
+			balanced.insertNode(array[orderedArray[i]]);
 		}
+		
 		return balanced;
 		 
+	}
+	
+	private ArrayList<Integer> orderHelper(int[] unordered, ArrayList<Integer> ordered) {
+		if (unordered.length < 3) {
+			for (int i=0; i< unordered.length; i++) {
+				ordered.add(unordered[i]);
+			}
+		} else {
+			int midPoint = unordered.length/2;
+			int[] leftArray = Arrays.copyOfRange(unordered, 0, midPoint);
+			int[] rightArray = Arrays.copyOfRange(unordered, midPoint+1, unordered.length);
+			ordered.add(unordered[midPoint]);			
+			orderHelper(leftArray, ordered);
+			orderHelper(rightArray, ordered);
+		}
+			
+		return ordered;
 	}
 
 	private ArrayList<Comparable> BalanceHelper_GetListOfElements(TreeNode node, ArrayList<Comparable> aux) {	
