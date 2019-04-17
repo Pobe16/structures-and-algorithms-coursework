@@ -183,7 +183,13 @@ public class DealershipTest {
 				Car testCar8 = new Car("Bugatti", "L200 AMS", "Veyron", "Black");
 				Car testCar9 = new Car("Subaru", "L890 FGG", "Impreza", "Racing");
 				Car testCar10 = new Car("Tesla", "B114 CDO", "Model S", "Silver");
-				Car testCar11 = new Car("Tesla", "B115 CDO", "Model S", "Matte Black");
+				Car testCar11 = new Car("Tesla", "B115 CD2", "Model S", "Brown");
+				Car testCar12 = new Car("Tesla", "B115 CD1", "Model S", "Blue");
+				Car testCar13 = new Car("Tesla", "B115 CD4", "Model S", "White");
+				Car testCar14 = new Car("Tesla", "B115 CD5", "Model S", "Green");
+				Car testCar15 = new Car("Tesla", "B115 CD6", "Model S", "Aqua");
+				Car testCar16 = new Car("Tesla", "B115 CD7", "Model S", "White");
+
 				carTree.insertNode(testCar);
 				carTree.insertNode(testCar2);
 				carTree.insertNode(testCar3);
@@ -195,6 +201,12 @@ public class DealershipTest {
 				carTree.insertNode(testCar9);
 				carTree.insertNode(testCar10);
 				carTree.insertNode(testCar11);
+				carTree.insertNode(testCar12);
+				carTree.insertNode(testCar13);
+				carTree.insertNode(testCar14);
+				carTree.insertNode(testCar15);
+				carTree.insertNode(testCar16);
+
 				carTree = carTree.balance();
 //				testCar = testCar2 = testCar3 = testCar4 = null;
 				System.out.println("Test Data Added Successfully");
