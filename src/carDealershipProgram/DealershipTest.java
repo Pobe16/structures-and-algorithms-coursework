@@ -24,7 +24,7 @@ public class DealershipTest {
 					+ "4 : Display all listed manufacturers [COMPLETE]\n"
 					+ "5 : Add new car [COMPLETE]\n"
 					+ "6 : Remove car for post sale [COMPLETE I THINK]\n"
-					+ "7 : Display all cars from particular manufacturer\n"
+					+ "7 : Display the number of cars available for a specific make and model [COMPLETE]\n"
 					+ "8 : Display ALL vehicles listed for sale [COMPLETE]\n"
 					+ "9 : ///Load Test Data\n"
 					+ "Enter Choice\t:\t");
@@ -129,15 +129,15 @@ public class DealershipTest {
 				break;
 				
 			case 7:
-				/*provide a method to display the 
-				 * number of cars available for a 
-				 * specific make and model of car 
-				 * e.g. the number of Ford Fiestas
-				 * */
+//				DISPLAY NUMBER OF VEHICLES FOR A SPECIFIED MAKE AND MODEL
 				String make = InputScanner.getString("Enter car make / manufacturer name");
 				String model = InputScanner.getString("Enter the model of the car");
 				Car tempCar = new Car(make, "no data", model, "no data");
-				System.out.println("Number of cars of that type : " + carTree.findNumberOf(tempCar));
+				Integer numberFound = carTree.findNumberOf(tempCar);
+				tempString = (numberFound == 0) 
+						? "Sorry no cars matching those criteria were found"
+						: "Number of available cars matching criteria : " + numberFound.toString();
+				System.out.println(tempString);
 				break;
 				
 			case 8:
@@ -179,12 +179,22 @@ public class DealershipTest {
 				Car testCar4 = new Car("Nissan", "L019 CCM", "Skyline", "Aqua");
 				Car testCar5 = new Car("Tesla", "B113 CDO", "Model S", "Green");
 				Car testCar6 = new Car("Bugatti", "L200 AMD", "Veyron", "Orange");
+				Car testCar7 = new Car("Alpha Romeo", "L119 EPH", "Giulia", "Red");
+				Car testCar8 = new Car("Bugatti", "L200 AMS", "Veyron", "Black");
+				Car testCar9 = new Car("Subaru", "L890 FGG", "Impreza", "Racing");
+				Car testCar10 = new Car("Tesla", "B114 CDO", "Model S", "Silver");
+				Car testCar11 = new Car("Tesla", "B115 CDO", "Model S", "Matte Black");
 				carTree.insertNode(testCar);
 				carTree.insertNode(testCar2);
 				carTree.insertNode(testCar3);
 				carTree.insertNode(testCar4);
 				carTree.insertNode(testCar5);
 				carTree.insertNode(testCar6);
+				carTree.insertNode(testCar7);
+				carTree.insertNode(testCar8);
+				carTree.insertNode(testCar9);
+				carTree.insertNode(testCar10);
+				carTree.insertNode(testCar11);
 				carTree = carTree.balance();
 //				testCar = testCar2 = testCar3 = testCar4 = null;
 				System.out.println("Test Data Added Successfully");
