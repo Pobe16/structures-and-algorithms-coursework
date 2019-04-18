@@ -26,12 +26,11 @@ public class DealershipTest {
 					+ "6 : Remove car for post sale \n"
 					+ "7 : Display the number of cars available for a specific make and model \n"
 					+ "8 : Display ALL vehicles listed for sale \n"
-					+ "9 : ///Load Test Data\n"
 					+ "Enter Choice\t:\t");
 //			Handle input via menu
 			switch(input) {
 			case 0 :
-				exitVerification = InputScanner.getString("Are you sure you want to quit?\ny/n");
+				exitVerification = InputScanner.getString("Are you sure you want to quit?\nY or y to quit");
 				RUNNING = exitVerification.equals("y") || exitVerification.equals("Y") ? false : true;
 				break;
 				
@@ -151,67 +150,67 @@ public class DealershipTest {
 				}
 				break;
 				
-			case 9:
-//				LOADS TEST DATA
-				/*	TEST DATA 1
-				 * 	Adds 6 manufacturers to the dealers manufacturerTree
-				 * */
-				Manufacturer man1 = new Manufacturer("Honda");
-				Manufacturer man2 = new Manufacturer("Alpha Romeo");
-				Manufacturer man3 = new Manufacturer("Subaru");
-				Manufacturer man4 = new Manufacturer("Nissan");
-				Manufacturer man5 = new Manufacturer("Tesla");
-				Manufacturer man6 = new Manufacturer("Bugatti");
-				manufacturerTree.insertNode(man1);
-				manufacturerTree.insertNode(man2);
-				manufacturerTree.insertNode(man3);
-				manufacturerTree.insertNode(man4);
-				manufacturerTree.insertNode(man5);
-				manufacturerTree.insertNode(man6);
-				manufacturerTree = manufacturerTree.balance();
-
-
-				/*	TEST DATA 2
-				 * 	Adds 6 cars to the dealers masterTree
-				 * */
-				Car testCar = new Car("Honda", "L332 KSF","Civic", "Blue");
-				Car testCar2 = new Car("Alpha Romeo", "L119 EPG", "Giulia", "Yellow");
-				Car testCar3 = new Car("Subaru", "L890 FAO", "Impreza", "Red");
-				Car testCar4 = new Car("Nissan", "L019 CCM", "Skyline", "Aqua");
-				Car testCar5 = new Car("Tesla", "B113 CDO", "Model S", "Green");
-				Car testCar6 = new Car("Bugatti", "L200 AMD", "Veyron", "Orange");
-				Car testCar7 = new Car("Alpha Romeo", "L119 EPH", "Giulia", "Red");
-				Car testCar8 = new Car("Bugatti", "L200 AMS", "Veyron", "Black");
-				Car testCar9 = new Car("Subaru", "L890 FGG", "Impreza", "Racing");
-				Car testCar10 = new Car("Tesla", "B114 CDO", "Model S", "Silver");
-				Car testCar11 = new Car("Tesla", "B115 CD2", "Model S", "Brown");
-				Car testCar12 = new Car("Tesla", "B115 CD1", "Model S", "Blue");
-				Car testCar13 = new Car("Tesla", "B115 CD4", "Model S", "White");
-				Car testCar14 = new Car("Tesla", "B115 CD5", "Model S", "Green");
-				Car testCar15 = new Car("Tesla", "B115 CD6", "Model S", "Aqua");
-				Car testCar16 = new Car("Tesla", "B115 CD7", "Model S", "White");
-
-				carTree.insertNode(testCar);
-				carTree.insertNode(testCar2);
-				carTree.insertNode(testCar3);
-				carTree.insertNode(testCar4);
-				carTree.insertNode(testCar5);
-				carTree.insertNode(testCar6);
-				carTree.insertNode(testCar7);
-				carTree.insertNode(testCar8);
-				carTree.insertNode(testCar9);
-				carTree.insertNode(testCar10);
-				carTree.insertNode(testCar11);
-				carTree.insertNode(testCar12);
-				carTree.insertNode(testCar13);
-				carTree.insertNode(testCar14);
-				carTree.insertNode(testCar15);
-				carTree.insertNode(testCar16);
-
-				carTree = carTree.balance();
-//				testCar = testCar2 = testCar3 = testCar4 = null;
-				System.out.println("Test Data Added Successfully");
-				break;
+//			case 9:
+////				LOADS TEST DATA
+//				/*	TEST DATA 1
+//				 * 	Adds 6 manufacturers to the dealers manufacturerTree
+//				 * */
+//				Manufacturer man1 = new Manufacturer("Honda");
+//				Manufacturer man2 = new Manufacturer("Alpha Romeo");
+//				Manufacturer man3 = new Manufacturer("Subaru");
+//				Manufacturer man4 = new Manufacturer("Nissan");
+//				Manufacturer man5 = new Manufacturer("Tesla");
+//				Manufacturer man6 = new Manufacturer("Bugatti");
+//				manufacturerTree.insertNode(man1);
+//				manufacturerTree.insertNode(man2);
+//				manufacturerTree.insertNode(man3);
+//				manufacturerTree.insertNode(man4);
+//				manufacturerTree.insertNode(man5);
+//				manufacturerTree.insertNode(man6);
+//				manufacturerTree = manufacturerTree.balance();
+//
+//
+//				/*	TEST DATA 2
+//				 * 	Adds 6 cars to the dealers masterTree
+//				 * */
+//				Car testCar = new Car("Honda", "L332 KSF","Civic", "Blue");
+//				Car testCar2 = new Car("Alpha Romeo", "L119 EPG", "Giulia", "Yellow");
+//				Car testCar3 = new Car("Subaru", "L890 FAO", "Impreza", "Red");
+//				Car testCar4 = new Car("Nissan", "L019 CCM", "Skyline", "Aqua");
+//				Car testCar5 = new Car("Tesla", "B113 CDO", "Model S", "Green");
+//				Car testCar6 = new Car("Bugatti", "L200 AMD", "Veyron", "Orange");
+//				Car testCar7 = new Car("Alpha Romeo", "L119 EPH", "Giulia", "Red");
+//				Car testCar8 = new Car("Bugatti", "L200 AMS", "Veyron", "Black");
+//				Car testCar9 = new Car("Subaru", "L890 FGG", "Impreza", "Racing");
+//				Car testCar10 = new Car("Tesla", "B114 CDO", "Model S", "Silver");
+//				Car testCar11 = new Car("Tesla", "B115 CD2", "Model S", "Brown");
+//				Car testCar12 = new Car("Tesla", "B115 CD1", "Model S", "Blue");
+//				Car testCar13 = new Car("Tesla", "B115 CD4", "Model S", "White");
+//				Car testCar14 = new Car("Tesla", "B115 CD5", "Model S", "Green");
+//				Car testCar15 = new Car("Tesla", "B115 CD6", "Model S", "Aqua");
+//				Car testCar16 = new Car("Tesla", "B115 CD7", "Model S", "White");
+//
+//				carTree.insertNode(testCar);
+//				carTree.insertNode(testCar2);
+//				carTree.insertNode(testCar3);
+//				carTree.insertNode(testCar4);
+//				carTree.insertNode(testCar5);
+//				carTree.insertNode(testCar6);
+//				carTree.insertNode(testCar7);
+//				carTree.insertNode(testCar8);
+//				carTree.insertNode(testCar9);
+//				carTree.insertNode(testCar10);
+//				carTree.insertNode(testCar11);
+//				carTree.insertNode(testCar12);
+//				carTree.insertNode(testCar13);
+//				carTree.insertNode(testCar14);
+//				carTree.insertNode(testCar15);
+//				carTree.insertNode(testCar16);
+//
+//				carTree = carTree.balance();
+////				testCar = testCar2 = testCar3 = testCar4 = null;
+//				System.out.println("Test Data Added Successfully");
+//				break;
 			default:
 				System.out.println("Invalid Input");
 			} //End switch

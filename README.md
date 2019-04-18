@@ -1,4 +1,19 @@
-# structures-and-algorithms-coursework  
+# structures-and-algorithms-coursework 
+
+Students
+
+B00331251 FRASER FEWSTER
+B00329768 MIKOLAJ LUKASIK
+
+Github
+https://github.com/Pobe16/structures-and-algorithms-coursework
+
+
+
+BRIEF
+__________
+
+
 COMP08034 Structures & Algorithms – Coursework Session 2018-19  
 This coursework can be carried out either individually or in pairs. Submission should be via Moodle. You are to implement a dynamic data structure to maintain details of stock for a second hand car dealership.  
 You are advised to develop the program one step at a time and keep a copy of the version for each step which should then be included in your submission. In addition to the marks at each step, there are 25 marks for programming style.  
