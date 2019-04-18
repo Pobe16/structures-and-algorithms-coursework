@@ -12,6 +12,7 @@ public class InputScanner {
 	      System.out.println(message);
 	      line = scanner.nextLine();
 	      try {
+	    	line = line.trim();
 	        integerValue = Integer.valueOf(line);
 	        break;
 	      } catch (NumberFormatException e) {

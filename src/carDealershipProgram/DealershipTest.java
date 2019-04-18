@@ -18,14 +18,14 @@ public class DealershipTest {
 //			Get user input
 			int input = InputScanner.getInteger("Menu\n"
 					+ "0 : Exit\n"
-					+ "1 : Add new manufacturer [COMPLETE]\n"
-					+ "2 : Remove manufacturer [COMPLETE]\n"
-					+ "3 : Check if manufacturer exists in records [COMPLETE]\n"
-					+ "4 : Display all listed manufacturers [COMPLETE]\n"
-					+ "5 : Add new car [COMPLETE]\n"
-					+ "6 : Remove car for post sale [COMPLETE I THINK]\n"
-					+ "7 : Display the number of cars available for a specific make and model [COMPLETE]\n"
-					+ "8 : Display ALL vehicles listed for sale [COMPLETE]\n"
+					+ "1 : Add new manufacturer\n"
+					+ "2 : Remove manufacturer \n"
+					+ "3 : Check if manufacturer exists in records \n"
+					+ "4 : Display all listed manufacturers \n"
+					+ "5 : Add new car \n"
+					+ "6 : Remove car for post sale \n"
+					+ "7 : Display the number of cars available for a specific make and model \n"
+					+ "8 : Display ALL vehicles listed for sale \n"
 					+ "9 : ///Load Test Data\n"
 					+ "Enter Choice\t:\t");
 //			Handle input via menu
@@ -43,6 +43,7 @@ public class DealershipTest {
 				} else {
 					Manufacturer temp = new Manufacturer(tempString);
 					manufacturerTree.insertNode(temp);
+					System.out.println("Manufacturer " + tempString + " added to records");
 					tempString = null;
 					manufacturerTree = manufacturerTree.balance();
 				}
