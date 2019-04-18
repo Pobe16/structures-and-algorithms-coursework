@@ -7,11 +7,13 @@ import java.util.Arrays;
 public class Tree {
 //	Attributes
 	private TreeNode root;
+	private Integer numberOfNodes;
 	
 //	Constructor initialises tree with root set to null
 	public Tree() 
 	{
 		root = null;
+		numberOfNodes = 0;
 	}
 
 	
@@ -30,12 +32,22 @@ public class Tree {
 	
 	public boolean removeNode(Comparable removedNode)
 	{
-		/*Algorithm
-		 * If no root exists return false
-		 * else
-		 * begin recursive remove s
-		 * */
-		return (root == null) ? false : root.remove(null, removedNode);
+		if(root.rightNode == null && root.leftNode == null)
+		{
+			if(root.data.compareTo(removedNode) == 0)
+			{
+				root = null;
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return (root == null) ? false : root.remove(null, removedNode);			
+		}
 	}
 	
 	public boolean contains (Comparable value)
