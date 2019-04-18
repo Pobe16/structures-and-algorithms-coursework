@@ -7,15 +7,12 @@ import java.util.Arrays;
 public class Tree {
 //	Attributes
 	private TreeNode root;
-	private Integer numberOfNodes;
 	
 //	Constructor initialises tree with root set to null
 	public Tree() 
 	{
 		root = null;
-		numberOfNodes = 0;
 	}
-
 	
 //	Getters
 	//Return private property root
